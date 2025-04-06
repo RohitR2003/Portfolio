@@ -6,6 +6,17 @@
     <title>Project Trojan</title>
     <link rel="stylesheet" href="trojan.css" />
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center; /* Center the whole page */
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
         .section-container {
             display: flex;
             align-items: flex-start;
@@ -61,6 +72,7 @@
             border-radius: 12px;
         }
 
+        /* Default content-box styling */
         .content-box {
             max-width: 1000px;
             margin: 3rem auto;
@@ -71,30 +83,93 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.03);
         }
 
+        /* Mobile view adjustments */
         @media (max-width: 768px) {
+            body {
+                align-items: center; /* Center the body content */
+                padding: 0;
+            }
+
+            /* Remove the content-box styling on mobile */
+            .content-box {
+                padding: 0;
+                box-shadow: none;
+                border: none;
+                background-color: transparent;
+                max-width: 100%;
+                margin: 0;
+            }
+
+            /* Center the sections */
             .section-container {
                 flex-direction: column;
                 align-items: center;
+                text-align: center; /* Center text */
             }
 
             .video-container, .video-box {
                 max-width: 100%;
             }
 
-            /* Remove the content-box on mobile but keep its contents */
-            .content-box {
-                padding: 0; /* Remove padding */
-                box-shadow: none; /* Remove box shadow */
-                border: none; /* Remove border */
-                background-color: transparent; /* Remove background color */
+            .more-videos-section .content-box {
+                padding: 0; /* Remove padding from "More Gameplay" section */
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+                max-width: 100%;
+                margin: 0;
             }
 
-            /* Add custom styling for the content inside the box */
-            .content-box .title,
-            .content-box .section__text__p1,
-            .content-box .about-details-container,
-            .content-box .video-container {
-                margin: 1rem 0; /* Ensure spacing for content */
+            /* Center content inside the container */
+            .section {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            .section__text__p1,
+            .title,
+            .video-heading {
+                margin: 1rem 0;
+            }
+
+            /* Adjust header (hamburger menu and logo) */
+            #hamburger-nav {
+                display: flex;
+                justify-content: space-between; /* Align logo and hamburger icon */
+                width: 100%; /* Ensure it takes full width */
+                padding: 10px; /* Add padding around */
+                box-sizing: border-box; /* Include padding in width calculation */
+            }
+
+            .logo {
+                margin-left: 10px; /* Add some left margin for spacing */
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+
+            .hamburger-menu {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px; /* Adjust the gap between hamburger icon and logo */
+                padding-right: 10px; /* Add some padding to the right */
+            }
+
+            .hamburger-icon {
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .hamburger-icon span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background-color: #333;
             }
         }
     </style>
@@ -220,3 +295,4 @@
 </script>
 </body>
 </html>
+

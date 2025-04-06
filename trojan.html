@@ -6,28 +6,31 @@
     <title>Project Trojan</title>
     <link rel="stylesheet" href="trojan.css" />
     <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
         .section-container {
             display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 20px;
             flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
         }
 
-        .about-details-container {
-            flex: 1;
-            min-width: 300px;
+        .about-details-container, .video-container {
+            flex: 1 1 100%;
+            min-width: 0;
         }
 
-        .video-container {
-            flex: 1;
-            max-width: 560px;
-            min-width: 300px;
-        }
-
-        .video-container iframe {
+        .video-container iframe, .video-box iframe {
             width: 100%;
-            height: 315px;
+            aspect-ratio: 16 / 9;
             border-radius: 12px;
         }
 
@@ -51,17 +54,12 @@
             display: flex;
             flex-direction: column;
             gap: 2.5rem;
-            max-width: 560px;
+            width: 100%;
             margin: 0 auto;
         }
 
-        .video-box iframe {
-            width: 100%;
-            height: 315px;
-            border-radius: 12px;
-        }
-
         .content-box {
+            width: 100%;
             max-width: 1000px;
             margin: 3rem auto;
             padding: 2rem;
@@ -69,21 +67,25 @@
             border-radius: 12px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        @media (min-width: 769px) {
+            .about-details-container, .video-container {
+                flex: 1 1 48%;
+            }
         }
 
         @media (max-width: 768px) {
-            .section-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .video-container, .video-box {
-                max-width: 100%;
+            .content-box {
+                margin: 1rem;
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
+
 <!-- NAVBAR -->
 <nav id="desktop-nav">
     <div class="logo">Rohit R</div>
@@ -123,30 +125,15 @@
         <div class="section-container">
             <div class="about-details-container">
                 <div class="text-container">
-                    <p>
-                        <strong>Trojan</strong> is a linear stealth action-adventure game featuring a time manipulation component that allows players to slow, pause, or rewind time to outsmart enemies and solve puzzles.
-                    </p>
-                    <br />
-                    <p>
-                        Built completely using <strong>C++ and Blueprints</strong> in Unreal Engine 5, Trojan leverages your gameplay programming and engine-level expertise. The project focuses on AI perception, custom movement systems, and an immersive environment.
-                    </p>
-                    <br />
-                    <p>
-                        All assets, including <strong>hard-surface models, animations, and PBR textures</strong>, were made using Blender, Cascadeur, and Substance Painter respectively.
-                    </p>
-                    <br />
-                    <p>
-                        The project is optimized for performance and modularity, making it scalable and easily expandable for future levels or features.
-                    </p>
+                    <p><strong>Trojan</strong> is a linear stealth action-adventure game featuring a time manipulation component that allows players to slow, pause, or rewind time to outsmart enemies and solve puzzles.</p><br />
+                    <p>Built completely using <strong>C++ and Blueprints</strong> in Unreal Engine 5, Trojan leverages your gameplay programming and engine-level expertise. The project focuses on AI perception, custom movement systems, and an immersive environment.</p><br />
+                    <p>All assets, including <strong>hard-surface models, animations, and PBR textures</strong>, were made using Blender, Cascadeur, and Substance Painter respectively.</p><br />
+                    <p>The project is optimized for performance and modularity, making it scalable and easily expandable for future levels or features.</p>
                 </div>
-
                 <div class="btn-container" style="margin-top: 2rem;">
-                    <button class="btn btn-color-2" onclick="location.href='index.html#projects'">
-                        ← Back to Projects
-                    </button>
+                    <button class="btn btn-color-2" onclick="location.href='index.html#projects'">← Back to Projects</button>
                 </div>
             </div>
-
             <div class="video-container">
                 <div class="video-heading">Ghost Mode</div>
                 <iframe src="https://www.youtube.com/embed/YWD0I_5qHD4" frameborder="0" allowfullscreen></iframe>
@@ -187,8 +174,6 @@
         </div>
     </div>
 </section>
-
-
 
 <!-- FOOTER -->
 <footer>

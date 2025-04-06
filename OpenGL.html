@@ -6,6 +6,7 @@
   <title>Retro OpenGL 3D Engine</title>
   <link rel="stylesheet" href="OpenGL.css" />
   <style>
+    /* Default content-box styling */
     .content-box {
       max-width: 1000px;
       margin: 3rem auto;
@@ -21,6 +22,85 @@
       height: 315px;
       border-radius: 8px;
       border: none;
+    }
+
+    /* Mobile view adjustments */
+    @media (max-width: 768px) {
+      body {
+        display: flex;
+        justify-content: center; /* Center the content horizontally */
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Remove the content-box styling on mobile */
+      .content-box {
+        padding: 0;
+        box-shadow: none;
+        border: none;
+        background-color: transparent;
+        max-width: 100%;
+        margin: 0;
+      }
+
+      /* Center the sections */
+      .section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center; /* Center text */
+      }
+
+      .section__text__p1,
+      .title,
+      .btn-container {
+        margin: 1rem 0;
+      }
+
+      /* Adjust header (hamburger menu and logo) */
+      #hamburger-nav {
+        display: flex;
+        justify-content: space-between; /* Align logo and hamburger icon */
+        width: 100%; /* Ensure it takes full width */
+        padding: 10px; /* Add padding around */
+        box-sizing: border-box; /* Include padding in width calculation */
+      }
+
+      .logo {
+        margin-left: 10px; /* Add some left margin for spacing */
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .hamburger-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px; /* Adjust the gap between hamburger icon and logo */
+        padding-right: 10px; /* Add some padding to the right */
+      }
+
+      .hamburger-icon {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .hamburger-icon span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+      }
+
+      /* Adjust video container on mobile */
+      .video-container iframe {
+        height: 200px; /* Smaller height on mobile */
+      }
     }
   </style>
 </head>
@@ -85,7 +165,7 @@
       </p>
     </div>
 
-    <div class="btn-container" style="margin-top: 2rem;">
+    <div class="btn-container" style="margin-top: 2rem;justify-content: center;">
       <button
               class="btn btn-color-2"
               onclick="location.href='index.html#projects'"

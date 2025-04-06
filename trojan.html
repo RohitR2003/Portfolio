@@ -6,11 +6,6 @@
     <title>Project Trojan</title>
     <link rel="stylesheet" href="trojan.css" />
     <style>
-        body {
-            margin: 0;
-            font-family: Poppins, sans-serif;
-        }
-
         .section-container {
             display: flex;
             align-items: flex-start;
@@ -67,49 +62,13 @@
         }
 
         .content-box {
-            width: 100%;
             max-width: 1000px;
-            margin: 2rem auto;
+            margin: 3rem auto;
             padding: 2rem;
             border: 1px solid #ddd;
             border-radius: 12px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0,0,0,0.03);
-            box-sizing: border-box;
-        }
-
-        /* NAVBAR */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            background-color: #f8f8f8;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-links li {
-            display: inline;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .logo {
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        /* HAMBURGER MENU */
-        #hamburger-nav {
-            display: none;
         }
 
         @media (max-width: 768px) {
@@ -122,60 +81,21 @@
                 max-width: 100%;
             }
 
+            /* Remove the content-box on mobile but keep its contents */
             .content-box {
-                padding: 1rem;
-                margin: 1rem;
+                padding: 0; /* Remove padding */
+                box-shadow: none; /* Remove box shadow */
+                border: none; /* Remove border */
+                background-color: transparent; /* Remove background color */
             }
 
-            #desktop-nav {
-                display: none;
+            /* Add custom styling for the content inside the box */
+            .content-box .title,
+            .content-box .section__text__p1,
+            .content-box .about-details-container,
+            .content-box .video-container {
+                margin: 1rem 0; /* Ensure spacing for content */
             }
-
-            #hamburger-nav {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 1rem 2rem;
-                background-color: #f8f8f8;
-            }
-
-            .hamburger-icon {
-                cursor: pointer;
-                display: flex;
-                flex-direction: column;
-                gap: 5px;
-            }
-
-            .hamburger-icon span {
-                width: 25px;
-                height: 3px;
-                background-color: #333;
-                display: block;
-            }
-
-            .menu-links {
-                display: none;
-                flex-direction: column;
-                background-color: #fff;
-                position: absolute;
-                top: 60px;
-                right: 20px;
-                border: 1px solid #ddd;
-                border-radius: 8px;
-                padding: 1rem;
-                z-index: 100;
-            }
-
-            .menu-links.open {
-                display: flex;
-            }
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            background-color: #f2f2f2;
-            margin-top: 3rem;
         }
     </style>
 </head>
@@ -183,12 +103,14 @@
 <!-- NAVBAR -->
 <nav id="desktop-nav">
     <div class="logo">Rohit R</div>
-    <ul class="nav-links">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#experience">Experience</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-    </ul>
+    <div>
+        <ul class="nav-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
 </nav>
 
 <!-- MOBILE NAV -->
@@ -217,16 +139,27 @@
         <div class="section-container">
             <div class="about-details-container">
                 <div class="text-container">
-                    <p><strong>Trojan</strong> is a linear stealth action-adventure game featuring a time manipulation component that allows players to slow, pause, or rewind time to outsmart enemies and solve puzzles.</p>
+                    <p>
+                        <strong>Trojan</strong> is a linear stealth action-adventure game featuring a time manipulation component that allows players to slow, pause, or rewind time to outsmart enemies and solve puzzles.
+                    </p>
                     <br />
-                    <p>Built completely using <strong>C++ and Blueprints</strong> in Unreal Engine 5, Trojan leverages your gameplay programming and engine-level expertise. The project focuses on AI perception, custom movement systems, and an immersive environment.</p>
+                    <p>
+                        Built completely using <strong>C++ and Blueprints</strong> in Unreal Engine 5, Trojan leverages your gameplay programming and engine-level expertise. The project focuses on AI perception, custom movement systems, and an immersive environment.
+                    </p>
                     <br />
-                    <p>All assets, including <strong>hard-surface models, animations, and PBR textures</strong>, were made using Blender, Cascadeur, and Substance Painter respectively.</p>
+                    <p>
+                        All assets, including <strong>hard-surface models, animations, and PBR textures</strong>, were made using Blender, Cascadeur, and Substance Painter respectively.
+                    </p>
                     <br />
-                    <p>The project is optimized for performance and modularity, making it scalable and easily expandable for future levels or features.</p>
+                    <p>
+                        The project is optimized for performance and modularity, making it scalable and easily expandable for future levels or features.
+                    </p>
                 </div>
+
                 <div class="btn-container" style="margin-top: 2rem;">
-                    <button class="btn btn-color-2" onclick="location.href='index.html#projects'">← Back to Projects</button>
+                    <button class="btn btn-color-2" onclick="location.href='index.html#projects'">
+                        ← Back to Projects
+                    </button>
                 </div>
             </div>
 
@@ -249,17 +182,23 @@
             <div class="video-box">
                 <div class="video-heading">Free Flow Combat</div>
                 <iframe src="https://youtube.com/embed/c1Fv38djfSE" frameborder="0" allowfullscreen></iframe>
-                <p class="video-description">This clip demonstrates the core combat mechanics of Trojan, inspired from Arkham and Spiderman PlayStation titles. Free flow combat with a gun for counter!</p>
+                <p class="video-description">
+                    This clip demonstrates the core combat mechanics of Trojan, inspired from Arkham and Spiderman PlayStation titles. Free flow combat with a gun for counter!
+                </p>
             </div>
             <div class="video-box">
                 <div class="video-heading">Seamless cutscene to Gameplay Transition</div>
                 <iframe src="https://www.youtube.com/embed/u48DR43tfEg" frameborder="0" allowfullscreen></iframe>
-                <p class="video-description">Trojan blends cinematic cutscenes directly into gameplay with no loading screens or delays, creating a smooth, immersive experience that keeps players in the action.</p>
+                <p class="video-description">
+                    Trojan blends cinematic cutscenes directly into gameplay with no loading screens or delays, creating a smooth, immersive experience that keeps players in the action.
+                </p>
             </div>
             <div class="video-box">
                 <div class="video-heading">Ghost Mode</div>
                 <iframe src="https://www.youtube.com/embed/YWD0I_5qHD4" frameborder="0" allowfullscreen></iframe>
-                <p class="video-description">In Ghost Mode, players can record their actions for a limited time, then rewind to the moment recording began. A clone is spawned to replay the recorded sequence exactly, allowing for advanced strategies like diversions, multi-path puzzles, or synchronized takedowns—all while the player takes a new route unnoticed.</p>
+                <p class="video-description">
+                    In Ghost Mode, players can record their actions for a limited time, then rewind to the moment recording began. A clone is spawned to replay the recorded sequence exactly, allowing for advanced strategies like diversions, multi-path puzzles, or synchronized takedowns—all while the player takes a new route unnoticed.
+                </p>
             </div>
         </div>
     </div>

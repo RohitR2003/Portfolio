@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Project Trojan</title>
+    <link rel="stylesheet" href="trojan.css" />
+    <style>
+        .section-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .about-details-container {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .video-container {
+            flex: 1;
+            max-width: 560px;
+            min-width: 300px;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 315px;
+            border-radius: 12px;
+        }
+
+        .video-heading {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .video-description {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        .more-videos-section {
+            margin-top: 3rem;
+        }
+
+        .video-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .video-box iframe {
+            width: 100%;
+            height: 315px;
+            border-radius: 12px;
+        }
+
+        .content-box {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.03);
+        }
+
+        @media (max-width: 768px) {
+            .section-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .video-container, .video-box {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- NAVBAR -->
+<nav id="desktop-nav">
+    <div class="logo">Rohit R</div>
+    <div>
+        <ul class="nav-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<nav id="hamburger-nav">
+    <div class="logo">Rohit R</div>
+    <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu-links">
+            <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="index.html#experience" onclick="toggleMenu()">Experience</a></li>
+            <li><a href="index.html#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+    </div>
+</nav>
+
+<!-- PROJECT TROJAN SECTION -->
+<section id="project-details" class="section">
+    <div class="content-box">
+        <p class="section__text__p1">Project Spotlight</p>
+        <h1 class="title">Project Trojan</h1>
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="text-container">
+                    <p>
+                        <strong>Trojan</strong> is a linear stealth action-adventure game featuring a time manipulation component that allows players to slow, pause, or rewind time to outsmart enemies and solve puzzles.
+                    </p>
+                    <br />
+                    <p>
+                        Built completely using <strong>C++ and Blueprints</strong> in Unreal Engine 5, Trojan leverages your gameplay programming and engine-level expertise. The project focuses on AI perception, custom movement systems, and an immersive environment.
+                    </p>
+                    <br />
+                    <p>
+                        All assets, including <strong>hard-surface models, animations, and PBR textures</strong>, were made using Blender, Cascadeur, and Substance Painter respectively.
+                    </p>
+                    <br />
+                    <p>
+                        The project is optimized for performance and modularity, making it scalable and easily expandable for future levels or features.
+                    </p>
+                </div>
+
+                <div class="btn-container" style="margin-top: 2rem;">
+                    <button class="btn btn-color-2" onclick="location.href='index.html#projects'">
+                        ← Back to Projects
+                    </button>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <div class="video-heading">Ghost Mode</div>
+                <iframe src="https://www.youtube.com/embed/YWD0I_5qHD4" frameborder="0" allowfullscreen></iframe>
+                <p class="video-description">
+                    In Ghost Mode, players can record their actions for a limited time, then rewind to the moment recording began. A clone is spawned to replay the recorded sequence exactly, allowing for advanced strategies like diversions, multi-path puzzles, or synchronized takedowns—all while the player takes a new route unnoticed.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MORE VIDEOS SECTION -->
+<section class="more-videos-section section">
+    <div class="content-box">
+        <h2 class="title">More Gameplay</h2>
+        <div class="video-stack">
+            <div class="video-box">
+                <div class="video-heading">Free Flow Combat</div>
+                <iframe src="https://youtube.com/embed/c1Fv38djfSE" frameborder="0" allowfullscreen></iframe>
+                <p class="video-description">
+                    This clip demonstrates the core combat mechanics of Trojan, inspired from Arkham and Spiderman PlayStation titles. Free flow combat with a gun for counter!
+                </p>
+            </div>
+            <div class="video-box">
+                <div class="video-heading">Seamless cutscene to Gameplay Transition</div>
+                <iframe src="https://www.youtube.com/embed/u48DR43tfEg" frameborder="0" allowfullscreen></iframe>
+                <p class="video-description">
+                    Trojan blends cinematic cutscenes directly into gameplay with no loading screens or delays, creating a smooth, immersive experience that keeps players in the action.
+                </p>
+            </div>
+            <div class="video-box">
+                <div class="video-heading">Ghost Mode</div>
+                <iframe src="https://www.youtube.com/embed/YWD0I_5qHD4" frameborder="0" allowfullscreen></iframe>
+                <p class="video-description">
+                    In Ghost Mode, players can record their actions for a limited time, then rewind to the moment recording began. A clone is spawned to replay the recorded sequence exactly, allowing for advanced strategies like diversions, multi-path puzzles, or synchronized takedowns—all while the player takes a new route unnoticed.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 Rohit R. All rights reserved.</p>
+</footer>
+
+<!-- JS FOR TOGGLING MENU -->
+<script>
+    function toggleMenu() {
+        const menu = document.querySelector(".menu-links");
+        const icon = document.querySelector(".hamburger-icon");
+        menu.classList.toggle("open");
+        icon.classList.toggle("open");
+    }
+</script>
+</body>
+</html>
